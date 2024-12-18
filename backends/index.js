@@ -12,6 +12,8 @@ console.log('JWT_SECRET:', process.env.JWT_SECRET);
 const app = express();
 app.use(bodyParser.json());
 
+app.use('/', createProxyMiddleware({ target: 'http://localhost:3000', // Alamat Vite changeOrigin: true }));
+
 // API routes
 app.use('/auth', authRoutes);
 app.use('/api', jobRoutes);  // Use job routes here

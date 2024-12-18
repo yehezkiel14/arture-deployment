@@ -18,6 +18,8 @@ app.use('/', createProxyMiddleware({ target: 'http://localhost:5137', changeOrig
 app.use('/auth', authRoutes);
 app.use('/api', jobRoutes);  // Use job routes here
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`Server is running`));
+// const PORT = process.env.PORT;
+
+const PORT = 5137
+app.listen(PORT, () => console.log(`Server is running on port http://localhost:${PORT}`));
 
